@@ -1,0 +1,50 @@
+{
+  "name": "ivytranslate/laravel",
+  "description": "Ivy helps you translate your Laravel project's lang files",
+  "homepage": "https://github.com/onpurposestudio/ivytranslate-laravel",
+  "type": "library",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Aaron Presley",
+      "email": "aaron@onpurpose.studio",
+      "homepage": "https://onpurpose.studio"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "IvyTranslate\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "laravel/framework": "^12.37",
+    "laravel/pint": "^1.25",
+    "orchestra/testbench": "^10.6",
+    "pestphp/pest": "^4.1"
+  },
+  "scripts": {
+    "lint": "./vendor/bin/pint",
+    "test": "./vendor/bin/pest"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "IvyTranslate\\IvyTranslateServiceProvider"
+      ],
+      "aliases": {
+        "IvyTranslate": "IvyTranslate\\IvyTranslate"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "preset": "laravel",
+  "rules": {
+    "ordered_class_elements": {
+      "order": [
+        "use_trait",
+        "property",
+        "construct",
+        "method_public",
+        "method_private",
+        "destruct"
+      ]
+    },
+    "blank_line_before_statement": {
+      "statements": []
+    }
+  }
+}
