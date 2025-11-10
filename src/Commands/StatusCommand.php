@@ -7,39 +7,15 @@ use IvyTranslate\IvyProject;
 
 class StatusCommand extends Command
 {
-    protected $signature = 'ivy:status {--full : Show an in-depth status. Could take a while if you have large/many lang files}';
+    protected $signature = 'ivy:status';
 
     protected $description = 'Check the status of your translations within the codebase';
 
     public function handle()
     {
         IvyProject::init();
-
-        $full = $this->option('full', false);
-
-        if ($full) {
-            return $this->full();
-        }
-
-        return $this->quick();
-    }
-
-    public function full()
-    {
         $this->renderResourceFilesTable();
-        // $this->renderSummaryTable();
         $this->renderEmptyKeysTable();
-
-        return Command::SUCCESS;
-    }
-
-    public function quick()
-    {
-        $this->renderResourceMapTable();
-        $this->line('');
-        $this->line('Call again with `--full` to process all lang files and show');
-        $this->line('  an in-depth status');
-        $this->line('');
 
         return Command::SUCCESS;
     }
